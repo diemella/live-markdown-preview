@@ -13,7 +13,7 @@ function transform() {
   var unorderedListA = /\s{2}[*]/;
   var unorderedListB = /\s{2}[-]/;
   var unorderedListC = /\s{2}[+]/;
-  var link = /[[].+[]][(].+[)]/;
+  var link = /(\[(.*?)\]\()(.+?)(\))/;
   var headingOne = /[#]{1}.+\s/;
   var headingTwo = /[#]{2}.+\s/;
   var headingThree = /[#]{3}.+\s/;
@@ -29,7 +29,7 @@ function transform() {
   //     transformInput = "<span class='italic'>" + input.slice(1, -1) + "</span>"
   //     // transformInput = input.replace(input, "<span class='italic'>" + input.slice(1, -1) + "</span>" )
   // }
-  
+
   var bolded = input.match(bold);
 
   if (bolded) {
